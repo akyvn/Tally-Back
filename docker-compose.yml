@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: tally-postgres
+    environment:
+      POSTGRES_DB: tallydb
+      POSTGRES_USER: tallyuser
+      POSTGRES_PASSWORD: tallypass
+    ports:
+      - "5432:5432"
+    volumes:
+      - tally-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  tally-postgres-data:
